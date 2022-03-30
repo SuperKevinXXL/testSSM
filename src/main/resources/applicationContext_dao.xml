@@ -16,16 +16,13 @@
     <bean class="org.mybatis.spring.SqlSessionFactoryBean">
         <!-- 配置数据源-->
         <property name="dataSource" value="ssmDadaSource"></property>
-        
         <!-- 配置mybatis的核心配置文件-->
         <property name="configLocation" value="classpath: SqlMapConfig.xml"></property>
-        
         <!-- 配置实体类-->
         <property name="typeAliasesPackage" value="com.ziqiang.company.pojo"></property>
-
     </bean>
     <!-- 创建mapper文件的扫描器-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.ziqiang.company.Mapper"></property>
+        <property name="basePackage" value="com.ziqiang.company.mapper"></property>
     </bean>
 </beans>
