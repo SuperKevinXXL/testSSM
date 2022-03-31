@@ -3,5 +3,5 @@ package com.ziqiang.company.service;
 import com.ziqiang.company.pojo.Admin;
 
 public interface AdminService {
-    Admin loging(String name,String pwd);
+    Admin login(String name,String pwd);
 }
