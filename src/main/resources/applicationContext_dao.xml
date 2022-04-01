@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd">
     <!-- 读取jdbc.properties属性文件-->
     <context:property-placeholder location="classpath:jdbc.properties"></context:property-placeholder>
     <!--创建数据源-->
@@ -15,9 +18,9 @@
     <!--创建SqlSessionFactoryBean-->
     <bean class="org.mybatis.spring.SqlSessionFactoryBean">
         <!-- 配置数据源-->
-        <property name="dataSource" value="ssmDadaSource"></property>
+        <property name="dataSource" ref="ssmDadaSource"></property>
         <!-- 配置mybatis的核心配置文件-->
-        <property name="configLocation" value="classpath: SqlMapConfig.xml"></property>
+        <property name="configLocation" value="classpath:SqlMapConfig.xml"></property>
         <!-- 配置实体类-->
         <property name="typeAliasesPackage" value="com.ziqiang.company.pojo"></property>
     </bean>
